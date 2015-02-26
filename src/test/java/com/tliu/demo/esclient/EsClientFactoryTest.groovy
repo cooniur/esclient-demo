@@ -28,16 +28,14 @@ public class EsClientFactoryTest
 	{
 		Client client = esClientFactory.getClient();
 
-		String query = """{"filtered":{"query":{"match_all":{}},"filter":{"term":{"_id":"100"}}}}"""
-
-		logger.debug("Query: {}", query)
+		logger.debug("Before SearchRequestBuilder...");
 
 		SearchRequestBuilder request = client.prepareSearch("patient_centric_1")
 				.setTypes("patient_data")
 				.setQuery(QueryBuilders.filteredQuery(QueryBuilders.matchAllQuery(), FilterBuilders.termFilter("_id", "100")))
 
-		logger.debug("Request: {}", request)
-
+		logger.debug("After SearchRequestBuilder, request is: {}", request);
+		
 		SearchResponse response = request.execute().actionGet()
 
 		logger.debug("Response: {}", response)
