@@ -30,8 +30,8 @@ public class EsClientFactoryTest
 
 		logger.debug("Before SearchRequestBuilder...");
 
-		SearchRequestBuilder request = client.prepareSearch("patient_centric_1")
-				.setTypes("patient_data")
+		SearchRequestBuilder request = client.prepareSearch("twitter")
+				.setTypes("data")
 				.setQuery(QueryBuilders.filteredQuery(QueryBuilders.matchAllQuery(), FilterBuilders.termFilter("_id", "100")))
 
 		logger.debug("After SearchRequestBuilder, request is: {}", request);

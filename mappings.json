@@ -1,0 +1,14 @@
+# Copy this to Marvel Sense
+POST twitter
+{
+  "mappings": {
+    "data": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "index": "not_analyzed"
+        }
+      }
+    }
+  }
+}

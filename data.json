@@ -1,0 +1,5 @@
+# Copy this to Marvel Sense
+POST twitter/data/100
+{
+  "name": "Tom"
+}
